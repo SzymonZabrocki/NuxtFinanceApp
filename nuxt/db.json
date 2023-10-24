@@ -1,0 +1,39 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "description": "Zakupy",
+      "amount": 50
+    },
+    {
+      "id": 2,
+      "description": "Paliwo",
+      "amount": 30
+    },
+    {
+      "description": "test",
+      "amount": 4,
+      "id": 3
+    },
+    {
+      "description": "asd",
+      "amount": 3,
+      "id": 4
+    },
+    {
+      "description": "sA",
+      "amount": 0,
+      "id": 5
+    },
+    {
+      "description": "fgh",
+      "amount": 0,
+      "id": 6
+    },
+    {
+      "description": "hgft",
+      "amount": 0,
+      "id": 7
+    }
+  ]
+}
