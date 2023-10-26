@@ -1,14 +1,32 @@
 <template>
-    <nav>
-      <ul>
-        <li><nuxt-link to="/">Strona główna</nuxt-link></li>
-        <li><nuxt-link to="/addExpense">Dodaj Wydatek</nuxt-link></li>
-        <li><nuxt-link to="/deleteExpense">Usuń Wydatek</nuxt-link></li>
-        <li><nuxt-link to="/expenseList">Wszystkie Wydatki</nuxt-link></li>
-        <!-- Dodaj linki do innych widoków według potrzeb -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand p-2" href="#">Twoja Aplikacja</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <nuxt-link to="/expenseList" class="nav-link">Wszystkie Wydatki</nuxt-link>
+        </li>
+        <li class="nav-item">
+          <nuxt-link to="/addExpense" class="nav-link">Dodaj Wydatek</nuxt-link>
+        </li>
+        <li class="nav-item">
+          <nuxt-link to="/deleteExpense" class="nav-link">Usuń Wydatek</nuxt-link>
+        </li>
       </ul>
-    </nav>
-  </template>
+    </div>
+  </nav>
+</template>
   
   <script>
   export default {

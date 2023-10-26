@@ -20,6 +20,7 @@
         newExpense: {
           description: '',
           amount: 0,
+          date: new Date(),
         },
       };
     },
@@ -30,6 +31,7 @@
           this.newExpense = {
             description: '',
             amount: 0,
+            date: new Date()
           }; // Wyczyść pola formularza po dodaniu
         } catch (error) {
           console.error('Błąd dodawania wydatku: ', error);
