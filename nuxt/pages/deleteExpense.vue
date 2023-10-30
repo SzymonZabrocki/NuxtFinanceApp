@@ -32,4 +32,42 @@
     },
   };
   </script>
+
+<style scoped>
+div {
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+input {
+  width: 100px;
+  padding: 5px;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: #dc3545; /* Czerwony kolor Bootstrap */
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #c82333; /* Ciemniejszy czerwony kolor dla efektu hover */
+  cursor: pointer;
+}
+</style>
+
   

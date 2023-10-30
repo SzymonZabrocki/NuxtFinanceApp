@@ -1,47 +1,53 @@
 <template>
     <div>
-      <h2>Edytuj Wydatek</h2>
-      <form @submit="editExpense">
+      <h2>Edit Expense</h2>
+      <form @submit.prevent="editExpense">
         <div class="form-group">
-          <label for="name">Nazwa</label>
-          <input type="text" id="name" v-model="editedExpense.name" class="form-control" required>
+          <label for="description">Description</label>
+          <input type="text" id="description" v-model="editedExpense.description" class="form-control" required>
         </div>
         <div class="form-group">
-          <label for="amount">Kwota</label>
+          <label for="amount">Amount</label>
           <input type="number" id="amount" v-model="editedExpense.amount" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary">Zapisz</button>
+        <button type="submit" class="btn btn-primary">Save</button>
       </form>
     </div>
   </template>
   
   <script>
+  import api from '@/services/api';
+  
   export default {
-    async asyncData({ params }) {
-      // Odczytaj przekazywane ID z parametrów trasy
-      const expenseId = params.id;
-  
-      // Symulacja danych wydatku (możesz zmienić na pobieranie z API)
-      const expenseData = {
-        name: 'Przykładowy Wydatek',
-        amount: 100.0,
-      };
-  
+    data() {
       return {
+        expenseId: null,
         editedExpense: {
-          id: expenseId,
-          name: expenseData.name,
-          amount: expenseData.amount,
+          description: '',
+          amount: null,
         },
       };
     },
+    async mounted() {
+      this.expenseId = this.$route.query.id;
+      if (this.expenseId) {
+        try {
+          const response = await api.getExpense(this.expenseId);
+          this.editedExpense = response.data;
+        } catch (error) {
+          console.error('Error fetching expense:', error);
+        }
+      }
+    },
     methods: {
-      editExpense() {
-        // Tutaj dodaj logikę edycji wydatku na podstawie editedExpense
-        // Możesz wywołać API lub edytować go lokalnie
-        console.log('Zedytowany wydatek:', this.editedExpense);
-        // Po zakończeniu edycji, możesz przekierować użytkownika na inną stronę, na przykład na stronę ExpenseList
-        this.$router.push('/expense-list');
+      async editExpense() {
+        try {
+          await api.editExpense(this.expenseId, this.editedExpense);
+          console.log('Expense edited successfully:', this.editedExpense);
+          this.$router.push('/expenseList');
+        } catch (error) {
+          console.error('Error editing expense:', error);
+        }
       },
     },
   };

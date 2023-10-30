@@ -21,4 +21,11 @@ export default {
   deleteExpense(id) {
     return apiClient.delete(`/expenses/${id}`);
   },
+
+  editExpense(id, expense) {
+    return apiClient.put(`/expenses/${id}`, expense);
+  },
+  getExpense(id) {
+    return apiClient.get(`/expenses/${id}`);
+  },
 };

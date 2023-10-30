@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand p-2" href="#">Twoja Aplikacja</a>
+    <nuxt-link to="/" class="navbar-brand p-2">FinanceApp</nuxt-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -35,5 +35,29 @@
   </script>
   
   <style scoped>
-  /* Dodaj stylizację nawigacji według potrzeb */
+  .navbar {
+    background-color: #4e73df !important;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: #ffffff !important;
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: #ffffff !important;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #ffffff !important;
+  }
+  
+  .navbar-light .navbar-toggler {
+    border-color: #ffffff !important;
+  }
+  
+  .nav-item:hover {
+    background-color: #2e59d9 !important;
+    border-radius: 0.25rem;
+  }
   </style>

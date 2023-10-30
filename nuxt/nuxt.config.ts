@@ -2,11 +2,10 @@
 export default ({
   devtools: { enabled: true },
 
-  buildModules: ['@nuxtjs/pwa'], // moduł PWA
+  buildModules: ['@nuxtjs/pwa', 'bootstrap-vue/nuxt'],
 
   css: [
-    'bootstrap/dist/css/bootstrap.css', // Bootstrap CSS
-    // '~/assets/styles.css', // własne style CSS
+    'bootstrap/dist/css/bootstrap.css',
   ],
 
   pwa: {
@@ -21,14 +20,6 @@ export default ({
       theme_color: '#1E88E5',
     },
   },
-
-  routes: [
-    // Inne trasy
-    {
-      path: '/editExpense/:id', // Zdefiniuj parametr id
-      component: '~/pages/EditExpense.vue',
-    },
-  ],
 })
 
 
